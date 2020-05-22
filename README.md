@@ -20,7 +20,7 @@ yarn start
 - [x] mock方案集成
 - [ ] 权限封装
 - [ ] 请求二次封装
-- [x] 使用`antd-mobile`组件库
+- [ ] 使用`antd-mobile`组件库
 - [ ] 使用`Sentry`进行异常监控
 - [ ] 使用`SSR`构建项目 
 - [ ] 使用oss插件，构建自动上传阿里云

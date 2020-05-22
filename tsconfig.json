@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "jsx": "react",
+    "sourceMap": true,
+    "removeComments": true,
+    "esModuleInterop": true,
+    "importHelpers": true,
+    "allowJs": true,
+    "module": "esnext",
+    "target": "esnext",
+    "lib": ["esnext", "dom"],
+    "baseUrl": ".",
+    "strict": true,
+    "paths": {
+      "@/*": ["./src/*"],
+      "@@/*": ["src/.umi/*"]
+    },
+    "allowSyntheticDefaultImports": true,
+    "rootDirs": ["/src", "/test", "/mock", "./typings"]
+  },
+  "include": ["/src", "/mock"],
+  "exclude": ["node_modules"]
+}

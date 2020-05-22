@@ -1,0 +1,68 @@
+{
+  "name": "kjk-fastH5",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "cross-env PORT=7000 PRO_VAR=dev umi dev",
+    "start-mock": "cross-env PRO_VAR=mock MOCK=none PORT=7000 umi dev",
+    "start-dev": "cross-env PRO_VAR=dev MOCK=none PORT=7000 umi dev",
+    "start-test": "cross-env PRO_VAR=test MOCK=none PORT=7000 umi dev",
+    "start-pro": "cross-env PRO_VAR=pro MOCK=none PORT=7000 umi dev",
+    "build": "umi build",
+    "commit": "git-cz"
+  },
+  "license": "ISC",
+  "lint-staged": {
+    "src/**/*.{js,jsx,json}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ],
+    "src/**/*.ts?(x)": [
+      "prettier --parser=typescript --write",
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@types/node": "^14.0.5",
+    "@types/react": "^16.9.35",
+    "@types/react-dom": "^16.9.8",
+    "@umijs/preset-react": "1.x",
+    "@umijs/test": "^3.2.2",
+    "babel-plugin-lodash": "^3.3.4",
+    "babel-plugin-react-css-modules": "5.2.6",
+    "commitizen": "^4.1.2",
+    "cross-env": "^7.0.2",
+    "cz-conventional-changelog": "^3.2.0",
+    "hasha": "^5.2.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.4",
+    "osdoc-lint": "^1.0.4",
+    "postcss-less": "3.1.4",
+    "postcss-nested": "4.1.2",
+    "prettier": "^2.0.5",
+    "typescript": "^3.9.3",
+    "umi": "^3.2.2"
+  },
+  "dependencies": {
+    "@alitajs/hd": "^2.3.14",
+    "antd-mobile": "2.3.3",
+    "lodash": "^4.17.15",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  }
+}

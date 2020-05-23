@@ -3,15 +3,17 @@
  * @Author: ahwgs
  * @Date: 2020-05-23 01:15:06
  * @Last Modified by: ahwgs
- * @Last Modified time: 2020-05-23 02:00:25
+ * @Last Modified time: 2020-05-23 12:40:57
  */
 
 import { defineConfig } from 'umi';
+import path from 'path';
 import pageRoutes from './router.config';
 import pluginConfig from './plugin.config';
 import appConfig from '../src/appConfig';
 import babelConfig from './babel.config';
 import proxyConfig from './proxy.config';
+import themeConfig from './theme.config';
 
 const { appName, enableVConsole } = appConfig;
 
@@ -67,4 +69,11 @@ export default defineConfig({
     NODE_IS_DEV,
   },
   proxy: proxyConfig,
+  theme: themeConfig,
+  lessLoader: {
+    modifyVars: {
+      // 或者可以通过 less 文件覆盖（文件路径为绝对路径）
+      hack: 'true; @import "~@/styles/index.less";',
+    },
+  },
 });

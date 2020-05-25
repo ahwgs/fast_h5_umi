@@ -28,6 +28,8 @@ module.exports = {
     'react/jsx-props-no-spreading': 0,
     '@typescript-eslint/interface-name-prefix': 0,
     '@typescript-eslint/no-explicit-any': 0,
-    'react-hooks/exhaustive-deps': 1,
+    'react-hooks/rules-of-hooks': 'warn',
+    'react-hooks/exhaustive-deps': 'warn',
+    'global-require': 0,
   },
 };

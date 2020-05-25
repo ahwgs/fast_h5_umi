@@ -14,3 +14,7 @@ if (enableVConsole) {
 Toast.config({
   mask: false,
 });
+
+export function onRouteChange({ location, matchedRoutes }) {
+  console.log('onRouteChange', location, matchedRoutes);
+}

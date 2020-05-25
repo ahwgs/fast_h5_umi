@@ -1,7 +1,7 @@
 // inspired by https://github.com/nolimits4web/Framework7/blob/v2/src/less/mixins.less#L76
 // but more powerful, both support viewport scale and not scale usage.
 
-@import "../themes/default";
+// @import "../themes/default";
 
 .scale-hairline-common(@color, @top, @right, @bottom, @left) {
   content: '';
@@ -16,7 +16,7 @@
 }
 
 .hairline(@direction, @color: @border-color-base) when (@direction = 'top') {
-  border-top: 1PX solid @color;
+  border-top: 1px solid @color;
 
   html:not([data-scale]) & {
     @media (min-resolution: 2dppx) {
@@ -25,7 +25,7 @@
       &::before {
         .scale-hairline-common(@color, 0, auto, auto, 0);
         width: 100%;
-        height: 1PX;
+        height: 1px;
         transform-origin: 50% 50%;
         transform: scaleY(0.5);
 
@@ -38,7 +38,7 @@
 }
 
 .hairline(@direction, @color: @border-color-base) when (@direction = 'right') {
-  border-right: 1PX solid @color;
+  border-right: 1px solid @color;
 
   html:not([data-scale]) & {
     @media (min-resolution: 2dppx) {
@@ -46,7 +46,7 @@
 
       &::after {
         .scale-hairline-common(@color, 0, 0, auto, auto);
-        width: 1PX;
+        width: 1px;
         height: 100%;
         background: @color;
         transform-origin: 100% 50%;
@@ -61,7 +61,7 @@
 }
 
 .hairline(@direction, @color: @border-color-base) when (@direction = 'bottom') {
-  border-bottom: 1PX solid @color;
+  border-bottom: 1px solid @color;
 
   html:not([data-scale]) & {
     @media (min-resolution: 2dppx) {
@@ -70,7 +70,7 @@
       &::after {
         .scale-hairline-common(@color, auto, auto, 0, 0);
         width: 100%;
-        height: 1PX;
+        height: 1px;
         transform-origin: 50% 100%;
         transform: scaleY(0.5);
 
@@ -83,7 +83,7 @@
 }
 
 .hairline(@direction, @color: @border-color-base) when (@direction = 'left') {
-  border-left: 1PX solid @color;
+  border-left: 1px solid @color;
 
   html:not([data-scale]) & {
     @media (min-resolution: 2dppx) {
@@ -91,7 +91,7 @@
 
       &::before {
         .scale-hairline-common(@color, 0, auto, auto, 0);
-        width: 1PX;
+        width: 1px;
         height: 100%;
         transform-origin: 100% 50%;
         transform: scaleX(0.5);
@@ -105,7 +105,7 @@
 }
 
 .hairline(@direction, @color: @border-color-base, @radius: 0) when (@direction = 'all') {
-  border: 1PX solid @color;
+  border: 1px solid @color;
   border-radius: @radius;
 
   html:not([data-scale]) & {
@@ -120,7 +120,7 @@
         top: 0;
         width: 200%;
         height: 200%;
-        border: 1PX solid @color;
+        border: 1px solid @color;
         border-radius: @radius * 2;
         transform-origin: 0 0;
         transform: scale(0.5);

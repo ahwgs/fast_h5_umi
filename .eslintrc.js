@@ -25,5 +25,9 @@ module.exports = {
     'react/destructuring-assignment': 0,
     'linebreak-style': [0, 'error', 'windows'],
     'no-new': 0,
+    'react/jsx-props-no-spreading': 0,
+    '@typescript-eslint/interface-name-prefix': 0,
+    '@typescript-eslint/no-explicit-any': 0,
+    'react-hooks/exhaustive-deps': 1,
   },
 };

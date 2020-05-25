@@ -3,7 +3,7 @@
  * @Author: ahwgs
  * @Date: 2020-05-23 01:15:06
  * @Last Modified by: ahwgs
- * @Last Modified time: 2020-05-23 12:40:57
+ * @Last Modified time: 2020-05-23 16:28:04
  */
 
 import { defineConfig } from 'umi';
@@ -72,8 +72,31 @@ export default defineConfig({
   theme: themeConfig,
   lessLoader: {
     modifyVars: {
-      // 或者可以通过 less 文件覆盖（文件路径为绝对路径）
       hack: 'true; @import "~@/styles/index.less";',
     },
+  },
+  cssLoader: {
+    localsConvention: 'camelCase',
+  },
+  // 依赖提取
+  chunks: ['vendors', 'umi'],
+  chainWebpack(config) {
+    config.merge({
+      optimization: {
+        minimize: true,
+        splitChunks: {
+          chunks: 'all',
+          cacheGroups: {
+            vendors: {
+              name: 'vendors',
+              test({ resource }) {
+                return /[\\/]node_modules[\\/]/.test(resource);
+              },
+              priority: 10,
+            },
+          },
+        },
+      },
+    });
   },
 });

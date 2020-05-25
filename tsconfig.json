@@ -22,6 +22,6 @@
     "allowSyntheticDefaultImports": true,
     "rootDirs": ["/src", "/test", "/mock", "./typings"]
   },
-  "include": ["/src", "/mock"],
+  "include": ["./src", "./mock"],
   "exclude": ["node_modules"]
 }

@@ -20,7 +20,7 @@ const HomePage: React.FC<IProps> = props => {
 
   React.useEffect(() => {
     getUser();
-  }, [getUser]);
+  }, []);
 
   return <div>首页</div>;
 };

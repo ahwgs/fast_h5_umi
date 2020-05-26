@@ -3,7 +3,7 @@
  * @Author: ahwgs
  * @Date: 2020-05-23 01:15:34
  * @Last Modified by: ahwgs
- * @Last Modified time: 2020-05-26 00:30:23
+ * @Last Modified time: 2020-05-26 23:04:31
  */
 
 export default [
@@ -30,27 +30,41 @@ export default [
         name: 'home',
         isMenu: true,
         component: '@/pages/home',
+        routes: [
+          {
+            path: '/home/123',
+            title: '首页123',
+            name: 'home1231',
+            component: '@/pages/home',
+          },
+        ],
       },
       {
         path: '/my',
         title: '我的',
         name: 'my',
         isMenu: true,
-        component: '@/pages/home',
+        component: '@/pages/mine',
       },
       {
         path: '/component',
         title: '组件',
         name: 'component',
         isMenu: true,
-        component: '@/pages/home',
+        component: '@/pages/component',
       },
       {
         path: '/expand',
         title: '拓展',
         name: 'expand',
         isMenu: true,
-        component: '@/pages/home',
+        component: '@/pages/expand',
+      },
+      {
+        path: '/setting',
+        title: '设置',
+        name: 'setting',
+        component: '@/pages/setting',
       },
     ],
   },

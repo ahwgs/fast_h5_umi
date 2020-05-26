@@ -21,7 +21,8 @@ yarn start
 - [x] 全局样式注入
 - [x] 通用布局组件封装 
 - [x] 使用`dva`
-- [ ] 使用`antd-mobile`组件库
+- [x] 使用`antd-mobile`组件库
+- [x] `h5`内部导航封装
 - [ ] 权限封装
 - [ ] 请求二次封装
 - [ ] 使用`Sentry`进行异常监控
@@ -60,3 +61,10 @@ yarn start
 }
 ```
 
+- `h5`导航封装
+
+具体可查看`BasicLayout`以及`NavgationBar`
+
+可在页面内使用`utils/nav.ts`下的`setOption`对导航进行设置
+
+目前导航支持设置参数有：

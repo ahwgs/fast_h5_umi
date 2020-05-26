@@ -3,3 +3,8 @@ export interface MenusType {
   icon: string;
   activeIcon: string;
 }
+
+export interface NavigationBarOption {
+  rightContent?: React.ReactNode;
+  leftContent?: React.ReactNode;
+}

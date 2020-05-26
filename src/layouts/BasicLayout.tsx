@@ -3,8 +3,10 @@ import { ConnectProps, ConnectState } from '@/models/connect';
 import { connect } from 'umi';
 import './BasicLayout.less';
 import MenuBar from '@/components/MenuBar';
-import { getMenuRoute } from '@/utils/utils';
+import { getMenuRoute, formatterMenu } from '@/utils/utils';
 import { commonMenu } from '@/common';
+import NavigationBar from '@/components/NavigationBar';
+import { navigationRef } from '@/utils/nav';
 
 interface BasicLayoutProps extends Required<ConnectProps> {
   prefixCls?: string;
@@ -16,7 +18,8 @@ const BasicLayout: FC<BasicLayoutProps> = props => {
   const { pathname } = location;
   const { routes } = route;
   const menuRoute = getMenuRoute(routes);
-  console.log('menusmenusmenus', commonMenu);
+  const allRoutes = formatterMenu(routes);
+  const currentRoute = allRoutes && allRoutes.find(r => r.path === pathname);
   if (menuRoute.indexOf(pathname) >= 0) {
     return (
       <div className={prefixCls}>
@@ -26,7 +29,12 @@ const BasicLayout: FC<BasicLayoutProps> = props => {
       </div>
     );
   }
-  return <div className={prefixCls}>{children}</div>;
+  return (
+    <div className={prefixCls}>
+      <NavigationBar ref={navigationRef} title={currentRoute.title || 'title'} />
+      {children}
+    </div>
+  );
 };
 
 BasicLayout.defaultProps = {

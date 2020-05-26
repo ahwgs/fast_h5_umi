@@ -8,7 +8,7 @@ export interface MenuBarProps {
   pathname: string;
   routes: MyRouteProps[];
   menus: MenusType[];
-  prefixCls: string;
+  prefixCls?: string;
 }
 
 const MenuBar: FC<MenuBarProps> = props => {
@@ -25,7 +25,6 @@ const MenuBar: FC<MenuBarProps> = props => {
       }
     });
   });
-  console.log('tabMenu', tabMenu);
   return (
     <TabBar destroyInactiveTab>
       {tabMenu.map(({ title, icon, activeIcon, path }) => (

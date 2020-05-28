@@ -24,7 +24,7 @@ yarn start
 - [x] 使用`antd-mobile`组件库
 - [x] `h5`内部导航封装
 - [ ] 权限封装
-- [ ] 请求二次封装
+- [x] 请求二次封装
 - [ ] 使用`Sentry`进行异常监控
 - [ ] 使用`SSR`构建项目 
 - [ ] 使用`oss`插件，构建自动上传阿里云
@@ -68,3 +68,13 @@ yarn start
 可在页面内使用`utils/nav.ts`下的`setOption`对导航进行设置
 
 目前导航支持设置参数有：
+
+|  属性   | 值  |
+|  ----  | ----  |
+| leftContent  | React.ReactNode |
+| rightContent | React.ReactNode |
+
+- 请求二次封装
+
+自行查看`utils/request.ts`，默认导出了四种请求方式，
+可自行根据业务需要调整`HttpCode`的枚举值

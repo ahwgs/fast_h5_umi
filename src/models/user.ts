@@ -11,9 +11,11 @@ export interface IUserModel {
   effects: {
     // 获取当前用户信息
     fetchCurrent: Effect;
+    // 退出登录
+    fetchLogout: Effect;
   };
   reducers: {
-    save: Reducer<any>;
+    save: Reducer<IUserModelState>;
   };
 }
 
@@ -32,6 +34,9 @@ const UserModel: IUserModel = {
           currentUser: responses,
         },
       });
+    },
+    *fetchLogout({ payload }, { call, put }) {
+      yield console.log('退出登录');
     },
   },
   reducers: {

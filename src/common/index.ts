@@ -24,4 +24,14 @@ const commonMenu: MenusType[] = [
   },
 ];
 
-export { commonMenu, IconTypes };
+/**
+ *接口响应枚举
+ */
+enum HttpCode {
+  SUCCESS = 0, // 成功
+  FAIL = 1, // 失败
+  WARN = 2, // 警告
+  NO_LOGIN = 1000, // 需要登录
+}
+
+export { commonMenu, IconTypes, HttpCode };

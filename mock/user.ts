@@ -3,20 +3,16 @@
  * @Author: ahwgs
  * @Date: 2020-05-23 02:03:32
  * @Last Modified by: ahwgs
- * @Last Modified time: 2020-05-23 02:27:57
+ * @Last Modified time: 2020-05-29 00:21:16
  */
 
-function fetchLogin(req, res) {
+function fetchLogin(req: any, res: any) {
   const { phone, password } = req.body;
   if (phone === '15912341234' && password === '123456') {
-    res.cookie(
-      'userToken',
-      'xff651c19f5824f769cedc5878fd33bd9|0f58fdb0959e07681a930ace0bbf47ca',
-      {
-        maxAge: 31536000000,
-        httpOnly: true,
-      },
-    );
+    res.cookie('userToken', 'xff651c19f5824f769cedc5878fd33bd9|0f58fdb0959e07681a930ace0bbf47ca', {
+      maxAge: 31536000000,
+      httpOnly: true,
+    });
     res.send({
       data: true,
       code: 0,
@@ -32,6 +28,16 @@ function fetchLogin(req, res) {
   });
 }
 
+const userInfo = {
+  data: {
+    name: 'fast-h5-umi',
+  },
+  code: 1000,
+  hasError: false,
+  message: 'success',
+};
+
 export default {
   'POST /api/users/login': fetchLogin,
+  'GET /api/user/info': userInfo,
 };

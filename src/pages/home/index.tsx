@@ -1,6 +1,6 @@
 import React from 'react';
-import { ConnectProps, ConnectState } from '@/models/connect';
-import { connect, useDispatch } from 'umi';
+import { ConnectState } from '@/models/connect';
+import { connect, useDispatch, ConnectProps } from 'umi';
 import './index.less';
 
 interface IProps extends ConnectProps {

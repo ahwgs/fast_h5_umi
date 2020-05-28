@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { ConnectProps, ConnectState } from '@/models/connect';
-import { connect } from 'umi';
+import { ConnectState } from '@/models/connect';
+import { connect, ConnectProps } from 'umi';
 import './BasicLayout.less';
 import MenuBar from '@/components/MenuBar';
 import { getMenuRoute, formatterMenu } from '@/utils/utils';

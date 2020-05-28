@@ -1,12 +1,11 @@
-import { Reducer } from 'redux';
-import { Effect } from '@/models/connect';
+import { Reducer, Effect } from 'umi';
 
 export interface IAppModelState {
   appStatus: string;
 }
 
 export interface IAppModel {
-  namespace: 'nav';
+  namespace: 'app';
   state: IAppModelState;
   effects: {};
   reducers: {

@@ -1,5 +1,4 @@
-import { Reducer } from 'redux';
-import { Effect } from '@/models/connect';
+import { Reducer, Effect } from 'umi';
 import { fetchUserService } from '@/services/user';
 
 export interface IUserModelState {

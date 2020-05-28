@@ -1,9 +1,9 @@
 import { Toast } from 'antd-mobile';
-import appConfig from './appConfig';
+import appConfig, { DefaultConfig } from './appConfig';
 
 console.info('当前app环境---->', PRO_VAR);
 
-const { enableVConsole } = appConfig;
+const { enableVConsole }: DefaultConfig = appConfig;
 
 if (enableVConsole) {
   console.log('vConsole init success');

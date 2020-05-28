@@ -1,6 +1,6 @@
 import React from 'react';
-import { ConnectProps, ConnectState } from '@/models/connect';
-import { connect } from 'umi';
+import { ConnectState } from '@/models/connect';
+import { connect, ConnectProps } from 'umi';
 import './index.less';
 import { Icon } from 'antd-mobile';
 import { setOptions } from '@/utils/nav';

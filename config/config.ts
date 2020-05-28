@@ -7,15 +7,14 @@
  */
 
 import { defineConfig } from 'umi';
-import path from 'path';
 import pageRoutes from './router.config';
 import pluginConfig from './plugin.config';
-import appConfig from '../src/appConfig';
+import appConfig, { DefaultConfig } from '../src/appConfig';
 import babelConfig from './babel.config';
 import proxyConfig from './proxy.config';
 import themeConfig from './theme.config';
 
-const { appName, enableVConsole } = appConfig;
+const { appName, enableVConsole }: DefaultConfig = appConfig;
 
 const { PRO_VAR, NODE_ENV } = process.env;
 

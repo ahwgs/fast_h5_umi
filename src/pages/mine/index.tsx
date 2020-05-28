@@ -1,6 +1,6 @@
 import React from 'react';
-import { ConnectProps, ConnectState } from '@/models/connect';
-import { connect, history } from 'umi';
+import { ConnectState } from '@/models/connect';
+import { connect, history, ConnectProps } from 'umi';
 import './index.less';
 import { Button } from 'antd-mobile';
 

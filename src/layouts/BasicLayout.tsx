@@ -19,7 +19,7 @@ const BasicLayout: FC<BasicLayoutProps> = props => {
   const { routes } = route;
   const menuRoute = getMenuRoute(routes);
   const allRoutes = formatterMenu(routes);
-  const currentRoute = allRoutes && allRoutes.find(r => r.path === pathname);
+  const currentRoute = (allRoutes && allRoutes.find(r => r.path === pathname)) || {};
   if (menuRoute.indexOf(pathname) >= 0) {
     return (
       <div className={prefixCls}>

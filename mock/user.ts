@@ -3,7 +3,7 @@
  * @Author: ahwgs
  * @Date: 2020-05-23 02:03:32
  * @Last Modified by: ahwgs
- * @Last Modified time: 2020-05-29 00:21:16
+ * @Last Modified time: 2020-05-30 07:36:12
  */
 
 function fetchLogin(req: any, res: any) {
@@ -31,8 +31,9 @@ function fetchLogin(req: any, res: any) {
 const userInfo = {
   data: {
     name: 'fast-h5-umi',
+    status: 1,
   },
-  code: 1000,
+  code: 0,
   hasError: false,
   message: 'success',
 };

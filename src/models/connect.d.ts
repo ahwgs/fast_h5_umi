@@ -14,6 +14,16 @@ export interface Loading {
   };
 }
 
-export interface Route {
+export interface BaseRoute {
+  authority?: string[] | string;
+  children?: BaseRoute[];
+  icon?: string;
+  name?: string;
+  path: string;
+  [key: string]: any;
+  isMenu?: boolean;
+}
+
+export interface Route extends BaseRoute {
   routes?: Route[];
 }

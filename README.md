@@ -23,7 +23,7 @@ yarn start
 - [x] 使用`dva`
 - [x] 使用`antd-mobile`组件库
 - [x] `h5`内部导航封装
-- [ ] 权限封装
+- [x] 权限封装
 - [x] 请求二次封装
 - [ ] 使用`Sentry`进行异常监控
 - [ ] 使用`SSR`构建项目 
@@ -78,3 +78,15 @@ yarn start
 
 自行查看`utils/request.ts`，默认导出了四种请求方式，
 可自行根据业务需要调整`HttpCode`的枚举值
+
+- 权限封装 
+
+使用`antd-pro`的权限方案，在`pages/Authorized`可查看具体内容
+
+在`router`中配置`authority`接受一个数组
+
+如果是不用登录就能访问无需配置`authority`
+
+需要登录才能访问`[user]`
+
+需要登录并且需要二次认证之类的`[user,admin]`

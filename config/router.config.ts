@@ -3,7 +3,7 @@
  * @Author: ahwgs
  * @Date: 2020-05-23 01:15:34
  * @Last Modified by: ahwgs
- * @Last Modified time: 2020-05-26 23:04:31
+ * @Last Modified time: 2020-05-30 07:51:57
  */
 
 export default [
@@ -20,8 +20,24 @@ export default [
     ],
   },
   {
+    path: '/exception',
+    routes: [
+      {
+        path: '/exception/403',
+        name: 'not-permission',
+        component: '@/pages/exception/403',
+      },
+      {
+        path: '/exception/404',
+        name: 'not-find',
+        component: '@/pages/exception/404',
+      },
+    ],
+  },
+  {
     path: '/',
     component: '@/layouts/BasicLayout',
+    wrappers: ['@/pages/Authorized'],
     routes: [
       { path: '/', redirect: '/home' },
       {
@@ -51,6 +67,7 @@ export default [
         title: '组件',
         name: 'component',
         isMenu: true,
+        authority: ['user'],
         component: '@/pages/component',
       },
       {
@@ -58,14 +75,22 @@ export default [
         title: '拓展',
         name: 'expand',
         isMenu: true,
+        authority: ['admin'],
         component: '@/pages/expand',
       },
       {
         path: '/setting',
         title: '设置',
         name: 'setting',
+        authority: ['user'],
         component: '@/pages/setting',
       },
+      {
+        component: '@/pages/exception/404',
+      },
     ],
+  },
+  {
+    component: '@/pages/exception/404',
   },
 ];

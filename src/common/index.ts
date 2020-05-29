@@ -34,4 +34,14 @@ enum HttpCode {
   NO_LOGIN = 1000, // 需要登录
 }
 
-export { commonMenu, IconTypes, HttpCode };
+/**
+ * 权限状态
+ */
+enum AuthorityStatus {
+  USER = 1,
+  ADMIN = 2,
+  CLOSE = 3,
+  GUEST = 0,
+}
+
+export { commonMenu, IconTypes, HttpCode, AuthorityStatus };

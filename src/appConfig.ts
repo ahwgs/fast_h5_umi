@@ -8,6 +8,7 @@ export interface DefaultConfig {
   axiosTimeout: number;
   axiosCookie: boolean;
   axiosBaseUrl: string;
+  authorityKey: string;
 }
 
 const appConfig: DefaultConfig = {
@@ -17,6 +18,7 @@ const appConfig: DefaultConfig = {
   axiosTimeout: 10000,
   axiosCookie: true,
   axiosBaseUrl: '/api',
+  authorityKey: 'fast-h5-umi-authority',
 };
 
 export default appConfig;

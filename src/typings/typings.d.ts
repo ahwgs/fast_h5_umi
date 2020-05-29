@@ -19,6 +19,7 @@ declare namespace APP {
     avatar?: string;
     username?: string;
     remark?: string;
+    status?: number;
   }
 
   export interface ICurrentUser extends IUser {
@@ -28,4 +29,5 @@ declare namespace APP {
 
 interface Window {
   baseURL: string;
+  reloadAuthorized: () => void;
 }

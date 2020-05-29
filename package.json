@@ -65,6 +65,7 @@
     "axios": "^0.19.2",
     "js-cookie": "^2.2.1",
     "lodash": "^4.17.15",
+    "path-to-regexp": "2.4.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-router-dom": "^5.2.0"

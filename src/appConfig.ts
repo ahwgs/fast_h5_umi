@@ -9,6 +9,7 @@ export interface DefaultConfig {
   axiosCookie: boolean;
   axiosBaseUrl: string;
   authorityKey: string;
+  enableSentry: boolean;
 }
 
 const appConfig: DefaultConfig = {
@@ -19,6 +20,7 @@ const appConfig: DefaultConfig = {
   axiosCookie: true,
   axiosBaseUrl: '/api',
   authorityKey: 'fast-h5-umi-authority',
+  enableSentry: true,
 };
 
 export default appConfig;

@@ -38,6 +38,7 @@
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
+    "@sentry/webpack-plugin": "^1.11.1",
     "@types/node": "^14.0.5",
     "@types/react": "^16.9.35",
     "@types/react-dom": "^16.9.8",
@@ -61,6 +62,7 @@
   },
   "dependencies": {
     "@alitajs/hd": "^2.3.14",
+    "@sentry/browser": "^5.15.5",
     "antd-mobile": "2.3.3",
     "axios": "^0.19.2",
     "js-cookie": "^2.2.1",

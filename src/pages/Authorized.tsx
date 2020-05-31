@@ -3,7 +3,7 @@
  * @Author: copy from antd pro
  * @Date: 2020-05-30 06:30:33
  * @Last Modified by: ahwgs
- * @Last Modified time: 2020-05-30 07:50:40
+ * @Last Modified time: 2020-06-01 06:49:43
  */
 
 import React, { useEffect } from 'react';
@@ -12,6 +12,7 @@ import Authorized from '@/utils/Authorized';
 import { getRouteAuthority } from '@/utils/utils';
 import { ConnectState, UserModelState } from '@/models/connect';
 import { stringify } from 'querystring';
+import ErrorBoundary from '@/components/ErrorBoundary';
 
 interface AuthComponentProps extends ConnectProps {
   user: UserModelState;
@@ -48,12 +49,14 @@ const AuthComponent: React.FC<AuthComponentProps> = ({
   };
 
   return (
-    <Authorized
-      authority={getRouteAuthority(location.pathname, routes) || ''}
-      noMatch={matchComponent()}
-    >
-      {children}
-    </Authorized>
+    <ErrorBoundary>
+      <Authorized
+        authority={getRouteAuthority(location.pathname, routes) || ''}
+        noMatch={matchComponent()}
+      >
+        {children}
+      </Authorized>
+    </ErrorBoundary>
   );
 };
 

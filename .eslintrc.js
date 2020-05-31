@@ -4,6 +4,7 @@ module.exports = {
     PRO_VAR: 'readonly',
     NODE_IS_DEV: 'readonly',
     VConsole: 'readonly',
+    RELEASE_VERSION: 'readpnly',
   },
   rules: {
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.ts', 'tsx'] }],

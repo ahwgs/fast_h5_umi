@@ -8,6 +8,7 @@ declare module '*.svg' {
 }
 declare const PRO_VAR: string; // 应用环境
 declare const NODE_IS_DEV: boolean; // node运行环境
+declare const RELEASE_VERSION: string;
 
 declare module 'antd-mobile';
 
@@ -27,7 +28,12 @@ declare namespace APP {
   }
 }
 
+interface AnyObject {
+  [propName: string]: any;
+}
+
 interface Window {
   baseURL: string;
   reloadAuthorized: () => void;
+  $sentry: AnyObject;
 }

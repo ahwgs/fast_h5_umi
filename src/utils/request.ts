@@ -3,9 +3,32 @@ import { getCookie, setCookie } from '@/utils/cookie';
 import { HttpCode } from '@/common';
 import { Toast } from 'antd-mobile';
 import { getDvaApp } from 'umi';
+import { ServerApiErrorInfo } from '@/common/types';
 import appConfig, { DefaultConfig } from '../appConfig';
 
 const { axiosBaseUrl, axiosCookie, axiosTimeout }: DefaultConfig = appConfig;
+
+function errorReport(
+  url: string,
+  error: string | Error,
+  requestOptions: AxiosRequestConfig,
+  response?: AnyObject,
+) {
+  if (window.$sentry) {
+    const errorInfo: ServerApiErrorInfo = {
+      error: typeof error === 'string' ? new Error(error) : error,
+      type: 'request',
+      requestUrl: url,
+      requestOptions: JSON.stringify(requestOptions),
+    };
+
+    if (response) {
+      errorInfo.response = JSON.stringify(response);
+    }
+
+    window.$sentry.log(errorInfo);
+  }
+}
 
 Axios.defaults.timeout = axiosTimeout;
 Axios.defaults.baseURL = axiosBaseUrl;
@@ -29,13 +52,15 @@ function requestFail(error: any) {
 }
 
 function responseSuccess(response: AxiosResponse) {
-  const { headers, data } = response;
+  const { headers, data, config } = response;
   if (headers.token) {
     setCookie('token', headers.token);
   }
+  const { url = '' } = config;
 
   const { code, hasError, data: resData, message } = data;
   if (code !== HttpCode.SUCCESS || hasError) {
+    errorReport(url, message, config, response);
     if (code === HttpCode.FAIL || hasError) {
       return Toast.fail(message || '系统异常,请联系管理员');
     }

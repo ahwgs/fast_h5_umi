@@ -18,3 +18,18 @@ export interface RouterTypes<T extends Record<string, any> = {}, P = {}> extends
   computedMatch?: match<P>;
   route?: RouteType & T;
 }
+
+export interface ReportOptions {
+  dsn: string;
+  release: string;
+  environment: string;
+  debug: boolean;
+}
+
+export interface ServerApiErrorInfo {
+  error: Error;
+  type: 'request';
+  requestUrl: string;
+  requestOptions: string;
+  response?: string;
+}

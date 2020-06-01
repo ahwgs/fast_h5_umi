@@ -3,7 +3,7 @@
  * @Author: ahwgs
  * @Date: 2020-05-23 01:15:34
  * @Last Modified by: ahwgs
- * @Last Modified time: 2020-06-02 00:00:31
+ * @Last Modified time: 2020-06-02 00:17:35
  */
 // 插件配置
 export default [

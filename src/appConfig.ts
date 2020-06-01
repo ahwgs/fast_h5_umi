@@ -10,6 +10,8 @@ export interface DefaultConfig {
   axiosBaseUrl: string;
   authorityKey: string;
   enableSentry: boolean;
+  baiduAnalyticsKey: string;
+  googleAnalyticsKeyKey: string;
 }
 
 const appConfig: DefaultConfig = {
@@ -21,6 +23,8 @@ const appConfig: DefaultConfig = {
   axiosBaseUrl: '/api',
   authorityKey: 'fast-h5-umi-authority',
   enableSentry: true,
+  baiduAnalyticsKey: '',
+  googleAnalyticsKeyKey: '',
 };
 
 export default appConfig;

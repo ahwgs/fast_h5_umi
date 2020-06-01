@@ -28,7 +28,7 @@ yarn start
 - [x] 使用`Sentry`进行异常监控
 - [ ] 使用`SSR`构建项目 
 - [x] 使用`oss`插件，构建自动上传阿里云
-- [ ] 接入百度统计谷歌统计
+- [x] 接入百度统计谷歌统计
 - [ ] `plop`自动生成组件文件
 - [ ] 待补充...
 
@@ -172,3 +172,14 @@ token=xxx  # token
 使用笔者写的`umi-plugin-alioss`插件，自动在构建完成之后上传至阿里云，插件支持`umi2.x`和`umi3.x`
 
 需要注意的是要在系统用户目录下新建配置文件`.alioss`
+
+- 统计管理
+
+因为`@umijs/preset-react`默认集成了`@umijs/plugin-analytics`，所以不需要手动再次安装，不然会报错，
+在`config.ts`直接配置`analytics`即可。
+
+如果没有安装`@umijs/preset-react`可手动安装`@umijs/plugin-analytics`
+```
+yarn add @umijs/plugin-analytics -D
+```
+然后修改配置即可。`umi3`的插件机制会自动加载

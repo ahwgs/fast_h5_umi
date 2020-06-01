@@ -3,7 +3,7 @@
  * @Author: ahwgs
  * @Date: 2020-05-23 01:15:06
  * @Last Modified by: ahwgs
- * @Last Modified time: 2020-06-01 23:42:53
+ * @Last Modified time: 2020-06-02 00:21:56
  */
 
 import { defineConfig } from 'umi';
@@ -16,7 +16,13 @@ import proxyConfig from './proxy.config';
 import themeConfig from './theme.config';
 import ossConfig from './alioss.config';
 
-const { appName, enableVConsole, enableSentry }: DefaultConfig = appConfig;
+const {
+  appName,
+  enableVConsole,
+  enableSentry,
+  baiduAnalyticsKey,
+  googleAnalyticsKeyKey,
+}: DefaultConfig = appConfig;
 
 // eslint-disable-next-line @typescript-eslint/camelcase
 const { PRO_VAR, NODE_ENV, npm_package_version } = process.env;
@@ -41,6 +47,12 @@ export default defineConfig({
   plugins: pluginConfig,
   devtool: enableSentry ? 'source-map' : '',
   alioss: ossConfig,
+  analytics: NODE_IS_DEV
+    ? {}
+    : {
+        ga: googleAnalyticsKeyKey,
+        baidu: baiduAnalyticsKey,
+      },
   hd: {
     theme: themeConfig,
     px2rem: {

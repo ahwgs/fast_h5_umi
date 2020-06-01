@@ -8,7 +8,9 @@
     "start-dev": "cross-env PRO_VAR=dev MOCK=none PORT=7000 umi dev",
     "start-test": "cross-env PRO_VAR=test MOCK=none PORT=7000 umi dev",
     "start-pro": "cross-env PRO_VAR=pro MOCK=none PORT=7000 umi dev",
-    "build": "umi build",
+    "build-dev": "cross-env PRO_VAR=dev  umi build && node clearSourceMap",
+    "build-test": "cross-env PRO_VAR=test umi build && node clearSourceMap",
+    "build": "cross-env PRO_VAR=pro umi build && node clearSourceMap",
     "commit": "git-cz"
   },
   "license": "ISC",
@@ -44,6 +46,7 @@
     "@types/react-dom": "^16.9.8",
     "@umijs/preset-react": "1.x",
     "@umijs/test": "^3.2.2",
+    "ali-oss": "^6.8.0",
     "babel-plugin-lodash": "^3.3.4",
     "babel-plugin-react-css-modules": "5.2.6",
     "commitizen": "^4.1.2",
@@ -58,7 +61,8 @@
     "prettier": "^2.0.5",
     "style-resources-loader": "^1.3.3",
     "typescript": "^3.9.3",
-    "umi": "^3.2.2"
+    "umi": "^3.2.2",
+    "umi-plugin-alioss": "1.0.2"
   },
   "dependencies": {
     "@alitajs/hd": "^2.3.14",

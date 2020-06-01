@@ -3,7 +3,7 @@
  * @Author: ahwgs
  * @Date: 2020-05-23 01:15:06
  * @Last Modified by: ahwgs
- * @Last Modified time: 2020-06-01 07:11:29
+ * @Last Modified time: 2020-06-01 23:42:53
  */
 
 import { defineConfig } from 'umi';
@@ -14,6 +14,7 @@ import appConfig, { DefaultConfig } from '../src/appConfig';
 import babelConfig from './babel.config';
 import proxyConfig from './proxy.config';
 import themeConfig from './theme.config';
+import ossConfig from './alioss.config';
 
 const { appName, enableVConsole, enableSentry }: DefaultConfig = appConfig;
 
@@ -39,6 +40,7 @@ const publicPathMap = {
 export default defineConfig({
   plugins: pluginConfig,
   devtool: enableSentry ? 'source-map' : '',
+  alioss: ossConfig,
   hd: {
     theme: themeConfig,
     px2rem: {

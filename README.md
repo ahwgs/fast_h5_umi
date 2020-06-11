@@ -30,6 +30,7 @@ yarn start
 - [x] 使用`oss`插件，构建自动上传阿里云
 - [x] 接入百度统计谷歌统计
 - [x] `analyze`打包资源分析
+- [x] 微信`js-sdk`二次封装 
 - [ ] `plop`自动生成组件文件
 - [ ] 待补充...
 
@@ -191,3 +192,7 @@ yarn add @umijs/plugin-analytics -D
 ```
 yarn build-analyze
 ```
+
+- 微信`js-sdk`二次封装
+
+对于`npm`包二次封装，返回`Promise`,并增加类型

@@ -12,6 +12,8 @@ declare const RELEASE_VERSION: string;
 
 declare module 'antd-mobile';
 
+declare module 'weixin-js-sdk';
+
 declare namespace APP {
   export interface IUser {
     id?: string;
@@ -36,4 +38,5 @@ interface Window {
   baseURL: string;
   reloadAuthorized: () => void;
   $sentry: AnyObject;
+  ReactNativeWebView: AnyObject;
 }

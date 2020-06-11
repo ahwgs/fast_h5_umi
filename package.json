@@ -11,6 +11,7 @@
     "build-dev": "cross-env PRO_VAR=dev  umi build && node clearSourceMap",
     "build-test": "cross-env PRO_VAR=test umi build && node clearSourceMap",
     "build": "cross-env PRO_VAR=pro umi build && node clearSourceMap",
+    "build-analyze":"cross-env ANALYZE=1 PRO_VAR=pro umi build && node clearSourceMap",
     "commit": "git-cz"
   },
   "license": "ISC",

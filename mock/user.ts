@@ -24,7 +24,7 @@ function fetchLogin(req: any, res: any) {
   res.send({
     data: true,
     code: 2001,
-    hasError: true,
+    hasError: false,
   });
 }
 
@@ -33,7 +33,7 @@ const userInfo = {
     name: 'fast-h5-umi',
     status: 1,
   },
-  code: 1,
+  code: 0,
   hasError: false,
   message: 'success',
 };

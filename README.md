@@ -29,6 +29,7 @@ yarn start
 - [ ] 使用`SSR`构建项目 
 - [x] 使用`oss`插件，构建自动上传阿里云
 - [x] 接入百度统计谷歌统计
+- [x] `analyze`打包资源分析
 - [ ] `plop`自动生成组件文件
 - [ ] 待补充...
 
@@ -183,3 +184,10 @@ token=xxx  # token
 yarn add @umijs/plugin-analytics -D
 ```
 然后修改配置即可。`umi3`的插件机制会自动加载
+
+- `analyze`打包资源分析
+
+默认使用`umi`的插件进行分析，使用如下命令
+```
+yarn build-analyze
+```

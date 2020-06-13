@@ -75,6 +75,7 @@
     "path-to-regexp": "2.4.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-lazyload": "^2.6.8",
     "react-router-dom": "^5.2.0",
     "weixin-js-sdk": "^1.6.0"
   }

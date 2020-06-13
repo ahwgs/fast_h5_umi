@@ -1,6 +1,6 @@
 import { IUserModelState } from '@/models/user';
 
-export default interface ConnectState {
+export interface ConnectState {
   loading: Loading;
   user: IUserModelState;
 }

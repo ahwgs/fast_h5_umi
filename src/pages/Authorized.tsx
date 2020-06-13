@@ -10,12 +10,13 @@ import React, { useEffect } from 'react';
 import { Redirect, connect, ConnectProps, useDispatch } from 'umi';
 import Authorized from '@/utils/Authorized';
 import { getRouteAuthority } from '@/utils/utils';
-import { ConnectState, UserModelState } from '@/models/connect';
+import { ConnectState } from '@/models/connect';
+import { IUserModelState } from '@/models/user';
 import { stringify } from 'querystring';
 import ErrorBoundary from '@/components/ErrorBoundary';
 
 interface AuthComponentProps extends ConnectProps {
-  user: UserModelState;
+  user: IUserModelState;
 }
 
 const AuthComponent: React.FC<AuthComponentProps> = ({
@@ -36,7 +37,7 @@ const AuthComponent: React.FC<AuthComponentProps> = ({
     dispatch({
       type: 'user/fetchLoginStatus',
     });
-  }, [isLogin]);
+  }, []);
 
   const matchComponent = () => {
     if (isLogin) return <Redirect to="/exception/403" />;

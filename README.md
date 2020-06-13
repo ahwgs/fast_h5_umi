@@ -1,5 +1,7 @@
 # umi h5 快速启动模版
 
+技术栈：`react` `umi3.x` `antd-mobild` `typescript`
+
 ### 快速开始
 
 #### 脚本
@@ -9,8 +11,31 @@ yarn
 ```
 - 启动项目
 ```
-yarn start
+yarn start # 本地mock
+yarn satrt-mock # 在线mock
+yarn satrt-dev # 开发环境
+yarn start-test # 测试环境
+yarn start-pro # 正式环境
 ```
+- 打包项目
+```
+yarn build # 打包正式环境
+yarn build-test # 打包测试环境
+yarn build-dev  # 打包开发环境
+yarn build-analyze # 正式环境-分析资源
+```
+- 提交代码
+```
+git add .
+yarn commit # 使用cz校验git message
+```
+
+### 基本组件
+
+目前内置了一些基本的组件，可具体查看下面列表
+
+- `Authorized` 权限 [查看更多](./src/components/Authorized/README.md)
+- `ErrorBoundary` 组件错误拦截 [查看更多](./src/components/ErrorBoundary/README.md)
 
 ### 功能列表
 - [x] git message 校验
@@ -26,15 +51,12 @@ yarn start
 - [x] 权限封装
 - [x] 请求二次封装
 - [x] 使用`Sentry`进行异常监控
-- [ ] 使用`SSR`构建项目 
 - [x] 使用`oss`插件，构建自动上传阿里云
 - [x] 接入百度统计谷歌统计
 - [x] `analyze`打包资源分析
 - [x] 微信`js-sdk`二次封装 
-- [ ] `plop`自动生成组件文件
-- [ ] 待补充...
 
-#### 具体描述
+#### 功能描述
 
 - 高清方案
 

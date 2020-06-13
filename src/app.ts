@@ -27,6 +27,6 @@ if (enableSentry && PRO_VAR !== 'mock' && !NODE_IS_DEV) {
   window.$sentry = sentry;
 }
 
-export function onRouteChange({ location, matchedRoutes }) {
-  console.log('onRouteChange', location, matchedRoutes);
-}
+// export function onRouteChange({ location, matchedRoutes }) {
+//   console.log('onRouteChange', location, matchedRoutes);
+// }

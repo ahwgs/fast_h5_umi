@@ -1,12 +1,18 @@
 import React from 'react';
+import Icon from '@/common/icons';
 import styles from './index.less';
 
 export interface IErrorBoundaryState {
   hasError: boolean;
 }
 
-class ErrorBoundary extends React.PureComponent<any, IErrorBoundaryState> {
-  constructor(props: any) {
+export interface IErrorBoundaryProps {
+  error?: string | React.ReactNode;
+  onErrorClick?: Function;
+}
+
+class ErrorBoundary extends React.PureComponent<IErrorBoundaryProps, IErrorBoundaryState> {
+  constructor(props: IErrorBoundaryProps) {
     super(props);
     this.state = {
       hasError: false,
@@ -14,6 +20,11 @@ class ErrorBoundary extends React.PureComponent<any, IErrorBoundaryState> {
   }
 
   handleTap = () => {
+    const { onErrorClick } = this.props;
+    if (onErrorClick) {
+      onErrorClick();
+      return;
+    }
     window.location.href = window.location.origin;
   };
 
@@ -33,12 +44,19 @@ class ErrorBoundary extends React.PureComponent<any, IErrorBoundaryState> {
 
   render() {
     const { hasError } = this.state;
-    const { children } = this.props;
+    const { children, error } = this.props;
     if (hasError) {
       return (
         <section className={styles.warp} onClick={this.handleTap}>
-          <div>抱歉，您访问的页面出问题啦</div>
-          <p>点击屏幕返回首页</p>
+          <section className={styles.error}>
+            <img src={Icon.emptyErrorIcon} alt="" />
+            <p>
+              {error && typeof error === 'string'
+                ? error
+                : '抱歉，您访问的页面出问题啦,点击屏幕返回首页'}
+            </p>
+          </section>
+          {error && typeof error === 'string' ? <p>{error}</p> : error}
         </section>
       );
     }

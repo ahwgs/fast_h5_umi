@@ -8,4 +8,5 @@ export default {
   componentActiveIcon: require('../../assets/png/icon_component_active.png'),
   discountIcon: require('../../assets/png/icon_discount.png'),
   discountActiveIcon: require('../../assets/png/icon_discount_active.png'),
+  emptyErrorIcon: require('../../assets/png/empty-image-error.png'),
 };

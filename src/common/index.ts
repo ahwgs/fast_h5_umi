@@ -1,4 +1,4 @@
-import IconTypes from './icons/icons';
+import IconTypes from './icons';
 import { MenusType } from './types/menus';
 
 const commonMenu: MenusType[] = [

@@ -17,7 +17,9 @@ const MinePage: React.FC<IProps> = props => {
   return (
     <div>
       我的页面
-      <Button onClick={goPage}>设置</Button>
+      <Button size="small" type="primary" onClick={goPage}>
+        设置
+      </Button>
     </div>
   );
 };

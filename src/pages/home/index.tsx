@@ -11,17 +11,8 @@ interface IProps extends ConnectProps {
 const HomePage: React.FC<IProps> = props => {
   const { loading, currentUser } = props;
   const dispatch = useDispatch();
-  console.log('currentUser', currentUser, loading);
-  const getUser = () => {
-    dispatch({
-      type: 'user/fetchCurrent',
-    });
-  };
 
-  React.useEffect(() => {
-    getUser();
-  }, []);
-
+  React.useEffect(() => {}, []);
   return <div>首页</div>;
 };
 

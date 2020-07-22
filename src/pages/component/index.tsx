@@ -1,22 +1,38 @@
 import React from 'react';
-import { ConnectState } from '@/models/connect';
-import { connect, ConnectProps } from 'umi';
-import './index.less';
+import { Accordion, List } from 'antd-mobile';
+import { history } from 'umi';
+import styles from './index.less';
 
-interface IProps extends ConnectProps {
-  loading: boolean;
-}
+const components = [
+  {
+    title: 'Layout 基本布局',
+    key: 'layout',
+    list: [
+      {
+        title: 'Flex 布局',
+        path: '/component/flex',
+      },
+    ],
+  },
+];
 
-const ComponentPage: React.FC<IProps> = props => {
-  const { loading } = props;
-  console.log('loading', loading);
-  return <div>组件页</div>;
-};
+const ComponentPage: React.FC = () => (
+  <section className={styles.container}>
+    <header>Antd mobile components</header>
+    <Accordion>
+      {components.map(group => (
+        <Accordion.Panel key={group.key} header={group.title}>
+          <List key={group.key}>
+            {group.list.map(com => (
+              <List.Item onClick={() => history.push(com.path)} key={com.path}>
+                {com.title}
+              </List.Item>
+            ))}
+          </List>
+        </Accordion.Panel>
+      ))}
+    </Accordion>
+  </section>
+);
 
-ComponentPage.defaultProps = {
-  loading: false,
-};
-
-export default connect(({ loading }: ConnectState) => ({
-  loading: loading.effects[''],
-}))(ComponentPage);
+export default ComponentPage;

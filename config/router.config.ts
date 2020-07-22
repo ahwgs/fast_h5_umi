@@ -69,14 +69,31 @@ export default [
         isMenu: true,
         authority: ['user'],
         component: '@/pages/component',
+        routes: [
+          {
+            path: '/component/flex',
+            title: 'Flex布局',
+            name: 'component.flex',
+            component: '@/pages/home',
+          },
+        ],
       },
       {
         path: '/expand',
         title: '拓展',
         name: 'expand',
         isMenu: true,
-        authority: ['admin'],
+        authority: ['user'],
         component: '@/pages/expand',
+        routes: [
+          {
+            path: '/expand/auth',
+            title: '权限页面',
+            name: 'expand.auth',
+            authority: ['admin'],
+            component: '@/pages/expand/auth',
+          },
+        ],
       },
       {
         path: '/setting',
